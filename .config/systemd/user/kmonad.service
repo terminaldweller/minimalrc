@@ -1,0 +1,12 @@
+[Unit]
+Description=KMonad keyboard config
+
+[Service]
+Restart=always
+RestartSec=3
+ExecStart=/home/devi/.local/bin/kmonad /home/devi/thinkpad_T430_iso.kbd
+Nice=-20
+
+[Install]
+DefaultInstance=config
+WantedBy=default.target
