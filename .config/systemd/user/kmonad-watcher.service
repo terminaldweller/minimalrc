@@ -4,7 +4,7 @@ Description=KMonad keyboard config
 [Service]
 Restart=always
 RestartSec=3
-ExecStart=/home/devi/.local/bin/kmonad /home/devi/keyboard.kdb
+ExecStart=/home/devi/.config/systemd/user/kmonad-watcher.sh
 Nice=-20
 
 [Install]
