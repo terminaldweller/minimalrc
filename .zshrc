@@ -61,6 +61,7 @@ alias fd="fdfind"
 alias j="zoxide"
 alias w3m='w3m -o user_agent="Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0"'
 alias v="vim"
+alias digg="dig && clear"
 
 export PATH=$PATH:/usr/sbin/
 export FZF_TMUX_OPTS="-p 70%,70% --border=sharp"
@@ -76,6 +77,66 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[04;38;5;146m'
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+dig() {
+  globalholecounter=0
+  local ABBATOIR_PATH="/home/devi/devi/abbatoir"
+  mkdir -p ${ABBATOIR_PATH}
+  if test "$("ls" -A ${ABBATOIR_PATH})"; then
+    while [ 1 ]; do
+      if [ -d "${ABBATOIR_PATH}/hole$globalholecounter" ]; then
+        # if its not empty
+        if test "$("ls" -A "${ABBATOIR_PATH}/hole$globalholecounter")"; then
+          :
+        # if its empty
+        else
+          cd ${ABBATOIR_PATH}/hole$globalholecounter
+          break
+        fi
+      else
+        mkdir ${ABBATOIR_PATH}/hole$globalholecounter
+        cd ${ABBATOIR_PATH}/hole$globalholecounter
+        echo $globalholecounter
+        break
+      fi
+      ((globalholecounter++))
+    done
+  else
+    mkdir ${ABBATOIR_PATH}
+    mkdir ${ABBATOIR_PATH}/hole$globalholecounter
+    cd ${ABBATOIR_PATH}/hole$globalholecounter
+  fi
+}
+
+burrow() {
+  globalholecounter=0
+  local FLESH_PIT_PATH="/tmp/fleshpit"
+  mkdir -p ${FLESH_PIT_PATH}
+  if test "$("ls" -A ${FLESH_PIT_PATH})"; then
+    while [ 1 ]; do
+      if [ -d "${FLESH_PIT_PATH}/pit$globalholecounter" ]; then
+        # if its not empty
+        if test "$("ls" -A "${FLESH_PIT_PATH}/pit$globalholecounter")"; then
+          :
+        # if its empty
+        else
+          cd ${FLESH_PIT_PATH}/pit$globalholecounter
+          break
+        fi
+      else
+        mkdir ${FLESH_PIT_PATH}/pit$globalholecounter
+        cd ${FLESH_PIT_PATH}/pit$globalholecounter
+        echo $globalholecounter
+        break
+      fi
+      ((globalholecounter++))
+    done
+  else
+    mkdir -p ${FLESH_PIT_PATH}
+    mkdir ${FLESH_PIT_PATH}/pit$globalholecounter
+    cd ${FLESH_PIT_PATH}/pit$globalholecounter
+  fi
+}
 
 bindkey -v
 
