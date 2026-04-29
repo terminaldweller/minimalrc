@@ -75,6 +75,9 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\x1b[48;5;22m\x1b[38;5;0m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[04;38;5;146m'
+export EDITRO="vim"
+export VISUAL="w3m"
+export WWW_HOME="https://searx.terminaldweller.com"
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
