@@ -141,6 +141,10 @@ burrow() {
   fi
 }
 
+vman() {
+  env MANWIDTH=205 man "$@" | vim - -R -M +'set ft=man' +only
+}
+
 bindkey -v
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
