@@ -53,6 +53,7 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(fzf --zsh)"
 
+alias sudo="sudo "
 alias ls="eza"
 alias l="eza -abgnhHliSmMxUO"
 alias ll="eza -F always -abgnhHliSmMxUO --changed --color-scale all --color-scale-mode gradient --icons always --git --git-repos -@"
@@ -62,6 +63,10 @@ alias j="zoxide"
 alias w3m='w3m -o user_agent="Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0"'
 alias v="vim"
 alias digg="dig && clear"
+alias lsblk="grc lsblk -f -i -m -p"
+alias df="grc df"
+alias fdisk="grc fdisk"
+alias mount="grc mount"
 
 export PATH=$PATH:/usr/sbin/
 export FZF_TMUX_OPTS="-p 70%,70% --border=sharp"
