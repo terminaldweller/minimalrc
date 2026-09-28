@@ -219,6 +219,8 @@ nnoremap <silent> <C-@>f :cs find i <C-R>=expand("<cfile>")<CR><CR>
 nnoremap <silent> <C-@>i :lcs find i <C-R>=expand("<cword>")<cr><cr><bar>:lopen<cr><bar>:wincmd p<cr>
 nnoremap <silent> <C-@>a :lcs find a <C-R>=expand("<cword>")<cr><cr><bar>:lopen<cr><bar>:wincmd p<cr>
 
+nnoremap <leader>a :argadd <c-r>=fnameescape(expand('%:p:h'))<cr>/*<c-d>
+
 "below is for finding where function decl is  used
 map g<C-]> :cs find c <C-R>=expand("<cword>")<CR><CR>
 "below is for finding where a definition is used
@@ -243,3 +245,13 @@ augroup gzip
  autocmd FileAppendPost     *.gz !mv <afile> <afile>:r
  autocmd FileAppendPost     *.gz !gzip <afile>:r
 augroup END
+
+if has('cscope')
+  nnoremap <silent> <leader>g :cs find g <C-r><C-w><CR>
+  nnoremap <silent> <leader>s :cs find s <C-r><C-w><CR>
+  nnoremap <silent> <leader>j :cs find c <C-r><C-w><CR>
+  nnoremap <silent> <leader>d :cs find d <C-r><C-w><CR>
+  " nnoremap <silent> <leader>t :cs find t <C-r><C-w><CR>
+  nnoremap <silent> <leader>f :cs find f <C-r>=expand('<cfile>')<CR><CR>
+  nnoremap <silent> <leader>i :cs find i <C-r>=expand('<cfile>')<CR><CR>
+endif
